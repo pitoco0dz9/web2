@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GitBooks</title>
+  <link rel="stylesheet" href="reset.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Josefin+Sans:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <header class="cabeçalho">
+    <div class="container">
+      <input type="checkbox" id="menu" class="container__botao">
+      <label for="menu" class="container__rotulo">
+        <span class="cabeçalho__menu-hamburguer container__imagem"></span>
+      </label>
+      <ul class="lista-menu">
+        <li class="lista-menu__titulo">Categorias</li>
+        <li class="lista-menu__item">
+          <a href="#" class="lista-menu__link">Programação</a>
+        </li>
+        <li class="lista-menu__item">
+          <a href="#" class="lista-menu__link">Front-end</a>
+        </li>
+        <li class="lista-menu__item">
+          <a href="#" class="lista-menu__link">Infraestrutura</a>
+        </li>
+        <li class="lista-menu__item">
+          <a href="#" class="lista-menu__link">Business</a>
+        </li>
+        <li class="lista-menu__item">
+          <a href="#" class="lista-menu__link">Design & UX</a>
+        </li>
+      </ul>
+      <img src="data:image/png;base64,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" alt="Logo da Alurabooks" class="container__imagem">
+      <h1 class="container__titulo"><b class="container__titulo--negrito">Gay./b>Books</h1>
+
+      <ul class="opções">
+        <input type="checkbox" id="opções-menu" class="opções__botão" />
+        <label for="opções-menu" class="opções__rotulo">
+          <li class="opções__item">Categorias</li>
+        </label>
+
+        <ul class="lista-menu">
+          <li class="lista-menu__item">
+            <a href="#" class="lista-menu__link">Programação</a>
+          </li>
+          <li class="lista-menu__item">
+            <a href="#" class="lista-menu__link">Front-end</a>
+          </li>
+          <li class="lista-menu__item">
+            <a href="#" class="lista-menu__link">Infraestrutura</a>
+          </li>
+          <li class="lista-menu__item">
+            <a href="#" class="lista-menu__link">Business</a>
+          </li>
+          <li class="lista-menu__item">
+            <a href="#" class="lista-menu__link">Design & UX</a>
+          </li>
+        </ul>
+        <li class="opções__item"><a href="#" class="opções__link">Favoritos</a></li>
+        <li class="opções__item"><a href="#" class="opções__link">Minha estante</a></li>
+      </ul>
+
+    </div>
+    <div class="container">
+      <a href="#"><img src="img/Favoritos.svg" alt="Meus favoritos"
+          class="container__imagem container__imagem-transparente"></a>
+      <a href="#" class="container__link">
+        <img src="https://cdn.leroymerlin.com.br/products/saco_de_lixo_60l_colorido_0,06_micras_500un_amarelo_1571366884_0fd3_300x300.jpg" alt="Carrinhos de compras" class="container__imagem">
+        <p class="container__texto">Minha sacola</p>
+      </a>
+      <a href="#" class="container__link">
+        <img src="images-removebg-preview (1).png" alt="Meu perfil" class="container__imagem">
+        <p class="container__texto">Meu perfil</p>
+      </a>
+    </div>
+  </header>
+
+  <section class="banner">
+    <h2 class="banner__titulo">Já sabe por onde começar?</h2>
+    <p class="banner__texto">Encontre em nossa estante o que precisa para seu desenvolvimento!</p>
+    <input type="search" class="banner__pesquisa" placeholder="Qual será sua próxima leitura?">
+  </section>
+
+  <section class="carrossel">
+    <h2 class="carrossel__titulo">Novos lançamentos</h2>
+
+    <div class="carrossel__container">
+      <!-- Slider main container -->
+      <div class="swiper">
+
+        <div class="swiper-pagination"></div>
+        <!-- Additional required wrapper -->
+        <div class="swiper-wrapper">
+          <!-- Slides -->
+          <div class="swiper-slide"><img src="img/ApacheKafka.svg"
+              alt="Livro sobre apache kafka e spring boot da alura books"></div>
+          <div class="swiper-slide"><img src="img/Liderança.svg"
+              alt="Livro sobre liderança em design design da alura books"></div>
+          <div class="swiper-slide"><img src="img/Javascript.svg" alt="Livro sobre javascript assertivo da alura books">
+          </div>
+          <div class="swiper-slide">
+            <img src="img/Guia Front-end.svg" alt="Livro Guia front end" />
+          </div>
+          <div class="swiper-slide">
+            <img src="img/Portugol.svg" alt="Livro sobre portugol" />
+          </div>
+          <div class="swiper-slide">
+            <img src="img/Acessibilidade.svg" alt="Livro sobre acessibilidade" />
+          </div>
+        </div>
+
+        <!-- If we need navigation buttons -->
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+
+      </div>
+
+      <div class="card">
+        <div class="card__descrição">
+          <div class="descrição">
+            <h3 class="descrição__titulo">Talvez você também se interesse por...</h3>
+            <h2 class="descrição__titulo-livro">Angular 11 e Firebase</h2>
+            <p class="descrição__texto">
+              Construindo uma aplicação integrada com a plataforma do Google.
+            </p>
+          </div>
+          <img src="img/Angular.svg" class="descrição__imagem" />
+        </div>
+        <div class="card__botões">
+          <ul class="botões">
+            <li class="botões__item">
+              <img src="img/Favoritos.svg" alt="Favoritar livro" />
+            </li>
+            <li class="botões__item">
+              <img src="img/Compras.svg" alt="Adicionar no carrinho de compras" />
+            </li>
+          </ul>
+          <a href="#" class="botões__ancora">Saiba mais</a>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+  <section class=”carrossel”>
+    <h2 class="carrossel__titulo">Mais vendidos</h2>
+
+    <div class="carrossel__container">
+      <div class="swiper">
+        <!-- Additional required wrapper -->
+        <!-- If we need pagination -->
+        <div class="swiper-pagination"></div>
+
+        <div class="swiper-wrapper">
+          <!-- Slides -->
+          <div class="swiper-slide"><img src="img/ApacheKafka.svg"
+              alt="Livro sobre apache kafka e spring boot da alura books"></div>
+          <div class="swiper-slide"><img src="img/Liderança.svg" alt="Livro sobre liderança em design da alura books">
+          </div>
+          <div class="swiper-slide"><img src="img/Javascript.svg" alt="Livro sobre javascript assertivo da alurabooks">
+          </div>
+          <div class="swiper-slide"><img src="img/Guia Front-end.svg" alt="Livro Guia front end"></div>
+          <div class="swiper-slide"><img src="img/Portugol.svg" alt="Livro sobre portugol"></div>
+          <div class="swiper-slide"><img src="img/Acessibilidade.svg" alt="livro sobre acessibilidade"></div>
+        </div>
+
+        <!-- If we need navigation buttons -->
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+      </div>
+
+      <div class="card">
+        <!-- 1º linha -->
+        <div class="card__descrição">
+          <!-- 1º coluna -->
+          <div class="descrição">
+            <img src="img/Estrelinhas.svg" alt="Avaliação 5 estrelas">
+            <h3 class="descrição__titulo">Autora do Mês</h3>
+            <h2 class="descrição__titulo-livro">Juliana Agarikov</h2>
+            <p class="descrição__texto">Analista de sistemas e escritora, Juliana é especialista em
+              Front-End.
+            </p>
+          </div>
+          <!-- 2º coluna -->
+          <img src="img/Escritora.svg" class="descrição__imagem">
+        </div>
+
+        <!-- 2º linha -->
+        <div class="card__botões">
+          <!-- 1º coluna -->
+          <ul class="botões">
+            <li class="botões__item"><img src="img/Favoritos.svg" alt="Favoritar livro"></li>
+            <li class="botões__item"><img src="img/Compras.svg" alt="Adicionar no carrinho de compras"></li>
+          </ul>
+          <!-- 2º coluna -->
+          <a href="#" class="botões__ancora">Saiba mais</a>
+        </div>
+      </div>
+    </div>
+
+
+  </section>
+
+  <section class="tópicos">
+    <h2 class="tópicos__titulo">TÓPICOS VISITADOS RECENTEMENTE</h2>
+    <ul class="tópicos__lista">
+      <li class="tópicos__item"><a href="#" class="tópicos__link">Android</a></li>
+      <li class="tópicos__item">
+        <a href="#" class="tópicos__link">Marketing Digital</a>
+      </li>
+      <li class="tópicos__item">
+        <a href="#" class="tópicos__link">Agile</a>
+      </li>
+      <li class="tópicos__item">
+        <a href="#" class="tópicos__link">Startups</a>
+      </li>
+      <li class="tópicos__item">
+        <a href="#" class="tópicos__link">HTML & CSS</a>
+      </li>
+      <li class="tópicos__item">
+        <a href="#" class="tópicos__link">Python</a>
+      </li>
+      <li class="tópicos__item">
+        <a href="#" class="tópicos__link">OO</a>
+      </li>
+      <li class="tópicos__item">
+        <a href="#" class="tópicos__link">Java</a>
+      </li>
+    </ul>
+  </section>
+
+  <section class="contato">
+    <div class="contato__descrição">
+      <h2 class="contato__titulo">Fique por dentro das novidades!</h2>
+      <p class="contato__texto">
+        Atualizações de e-books, novos livros, promoções e outros.
+      </p>
+    </div>
+    <input type="email" placeholder="        Cadastre seu e-mail" class="contato__email">
+  </section>
+
+  <hr />
+
+  <footer class="rodapé">
+    <h2 class="rodapé__titulo">Grupo Alura</h2>
+    <ul class="lista-rodapé">
+      <li class="lista-rodapé__titulo">Educação</li>
+      <li class="lista-rodapé__item">
+        <img src="img/Caelum.svg" alt="Logo da Caelum" />
+        <a href="#" class="lista-rodapé__link">Caelum</a>
+      </li>
+      <li class="lista-rodapé__item">
+        <img src="img/CasaDoCodigo.svg" alt="Logo da Casa do Código" />
+        <a href="#" class="lista-rodapé__link">Casa do Código</a>
+      </li>
+    </ul>
+
+    <ul class="lista-rodapé">
+      <li class="lista-rodapé__titulo">Educação online</li>
+      <li class="lista-rodapé__item">
+        <img src="img/Alura.svg" alt="Logo da Alura" />
+        <a href="#" class="lista-rodapé__link">Alura</a>
+      </li>
+      <li class="lista-rodapé__item">
+        <img src="img/AluraEmpresas.svg" alt="Logo da AluraParaEmpresas" />
+        <a href="#" class="lista-rodapé__link">Alura para Empresas</a>
+      </li>
+      <li class="lista-rodapé__item">
+        <img src="img/AluraLATAM.svg" alt="Logo da Alura Latam" />
+        <a href="#" class="lista-rodapé__link">Alura LATAM</a>
+      </li>
+      <li class="lista-rodapé__item">
+        <img src="img/AluraStart.svg" alt="Logo da Alura START" />
+        <a href="#" class="lista-rodapé__link">Alura Start</a>
+      </li>
+      <li class="lista-rodapé__item">
+        <img src="img/MusicDot.svg" alt="Logo da Music Dot" />
+        <a href="#" class="lista-rodapé__link">Music Dot</a>
+      </li>
+      <li class="lista-rodapé__item">
+        <img src="img/AluraLingua.svg" alt="Logo da Alura Lingua" />
+        <a href="#" class="lista-rodapé__link">Alura Língua</a>
+      </li>
+      <li class="lista-rodapé__item">
+        <img src="img/PM3.svg" alt="Logo da PM3" />
+        <a href="#" class="lista-rodapé__link">PM3</a>
+      </li>
+    </ul>
+
+    <ul class="lista-rodapé">
+      <li class="lista-rodapé__titulo">Comunidade</li>
+      <li class="lista-rodapé__item">
+        <img src="img/HipstersTech.svg" alt="Logo do Hipsters ponto Tech" />
+        <a href="#" class="lista-rodapé__link">Hipsters ponto Tech</a>
+      </li>
+      <li class="lista-rodapé__item">
+        <img src="img/ScubaDev.svg" alt="Logo do Scuba Dev" />
+        <a href="#" class="lista-rodapé__link">Scuba Dev</a>
+      </li>
+      <li class="lista-rodapé__item">
+        <img src="img/LayersTech.svg" alt="Logo do Layers ponto Tech" />
+        <a href="#" class="lista-rodapé__link">Layers ponto Tech</a>
+      </li>
+      <li class="lista-rodapé__item">
+        <img src="img/LikeABoss.svg" alt="Logo do Like a Boss" />
+        <a href="#" class="lista-rodapé__link">Like a Boss</a>
+      </li>
+      <li class="lista-rodapé__item">
+        <img src="img/CarreiraSemFronteira.svg" alt="Logo do Carreira sem fronteiras" />
+        <a href="#" class="lista-rodapé__link">Carreira sem fronteiras</a>
+      </li>
+      <li class="lista-rodapé__item">
+        <img src="img/HipstersJobs.svg" alt="Logo do Hipsters ponto jobs" />
+        <a href="#" class="lista-rodapé__link">Hipsters ponto jobs</a>
+      </li>
+      <li class="lista-rodapé__item">
+        <img src="img/GUJ.svg" alt="Logo do GUJ" />
+        <a href="#" class="lista-rodapé__link">GUJ</a>
+      </li>
+    </ul>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script>
+    const swiper = new Swiper(".swiper", {
+      spaceBetween: 10,
+      slidesPerView: 3,
+      pagination: {
+        el: '.swiper-pagination',
+        type: 'bullets',
+      },
+    });
+  </script>
+</body>
+
+</html>
